@@ -3,7 +3,7 @@
 
 # In[1]:
 
-# cite: Chapter 3 in Python for Data Analysis
+# cite: Chapter 3 in Python for Data Analysis， Wes Mckinney
 from numpy.random import randn
 
 

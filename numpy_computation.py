@@ -251,6 +251,179 @@ arr2d[:2][1:]
 arr2d[:2,1:]
 
 
+# In[3]:
+
+names = np.array(['Bob','Joe','Will','Bob','Will','Joe','Joe'])
+
+
+# In[9]:
+
+from numpy.random import randn
+data = randn(7,4)
+
+
+# In[10]:
+
+names == 'Bob'
+
+
+# In[11]:
+
+data
+
+
+# In[12]:
+
+data[names == 'Bob']
+
+
+# In[13]:
+
+data[names == 'Bob', 2:]
+
+
+# In[14]:
+
+data[names == 'Bob', 3]
+
+
+# In[15]:
+
+names != 'Bob'
+
+
+# In[17]:
+
+data[~(names == 'Bob')]
+
+
+# In[18]:
+
+mask = (names == 'Bob')|(names == 'Will')
+
+
+# In[19]:
+
+data[mask]
+
+
+# In[20]:
+
+data[data < 0] = 0
+
+
+# In[21]:
+
+data
+
+
+# In[23]:
+
+data[names != 'Joe'] = 7
+
+
+# In[24]:
+
+data
+
+
+# In[25]:
+
+arr = np.empty((8,4))
+
+
+# In[26]:
+
+arr
+
+
+# In[27]:
+
+for i in range(8):
+    arr[i, :] = i
+
+
+# In[28]:
+
+arr
+
+
+# In[30]:
+
+for i in range(8):
+    arr[i] = i + 1
+
+
+# In[31]:
+
+arr
+
+
+# In[32]:
+
+arr[[4,3,0,6]]
+
+
+# In[33]:
+
+arr[[-3,-5,-7]]
+
+
+# In[34]:
+
+arr = np.arange(32).reshape((8,4))
+
+
+# In[35]:
+
+arr
+
+
+# In[36]:
+
+arr[[1,5,7,2],[0,3,1,2]]
+
+
+# In[37]:
+
+arr[[1,5,7,2]][:,[0,3,1,2]]
+
+
+# In[38]:
+
+arr[np.ix_([1,5,7,2],[0,3,1,2])]
+
+
+# In[39]:
+
+arr = np.arange(35).reshape((5,7))
+
+
+# In[40]:
+
+arr
+
+
+# In[41]:
+
+arr.T
+
+
+# In[42]:
+
+arr = randn(6,3)
+
+
+# In[43]:
+
+arr
+
+
+# In[44]:
+
+np.dot(arr.T, arr)
+
+
 # In[ ]:
 
 

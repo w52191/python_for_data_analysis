@@ -787,6 +787,145 @@ arch = np.load('array_achive.npz')
 arch['b']
 
 
+# In[2]:
+
+#linear algebra
+import numpy as np
+from numpy.random import randn
+x = np.array([[1,2,3],[4,5,6]])
+y = np.array([[6,23],[-1,7],[8,9]])
+
+
+# In[3]:
+
+x.dot(y)
+
+
+# In[4]:
+
+x
+
+
+# In[5]:
+
+y
+
+
+# In[6]:
+
+x[0]
+
+
+# In[7]:
+
+x.shape
+
+
+# In[8]:
+
+np.dot(x, y)
+
+
+# In[9]:
+
+np.dot(x, np.ones(3))
+
+
+# In[10]:
+
+x.dtype
+
+
+# In[11]:
+
+from numpy.linalg import inv, qr
+
+
+# In[12]:
+
+x = randn(5,5)
+
+
+# In[13]:
+
+mat = x.T.dot(x)
+
+
+# In[14]:
+
+mat
+
+
+# In[15]:
+
+inv(mat)
+
+
+# In[16]:
+
+mat.dot(inv(mat))
+
+
+# In[19]:
+
+test = mat.dot(inv(mat))
+
+
+# In[22]:
+
+np.round(mat, 2)
+
+
+# In[23]:
+
+q, r = qr(mat)
+
+
+# In[24]:
+
+q
+
+
+# In[25]:
+
+r
+
+
+# In[33]:
+
+nsteps = 1000
+
+
+# In[34]:
+
+draws = np.random.randint(0, 2, size = nsteps)
+
+
+# In[36]:
+
+steps = np.where(draws > 0, 1, -1)
+
+
+# In[37]:
+
+walk = steps.cumsum()
+
+
+# In[38]:
+
+walk.min()
+
+
+# In[39]:
+
+walk.max()
+
+
+# In[40]:
+
+(np.abs(walk)>=10).argmax()
+
+
 # In[ ]:
 
 

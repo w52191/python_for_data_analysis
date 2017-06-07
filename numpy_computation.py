@@ -424,6 +424,369 @@ arr
 np.dot(arr.T, arr)
 
 
+# In[45]:
+
+arr = np.arange(16).reshape((2,2,4))
+
+
+# In[46]:
+
+arr
+
+
+# In[47]:
+
+arr.swapaxes(1,2)
+
+
+# In[48]:
+
+arr = np.arange(10)
+
+
+# In[49]:
+
+arr
+
+
+# In[52]:
+
+np.sqrt(arr)
+
+
+# In[53]:
+
+np.exp(arr)
+
+
+# In[54]:
+
+x = randn(8)
+
+
+# In[55]:
+
+x
+
+
+# In[56]:
+
+y = randn(8)
+
+
+# In[57]:
+
+y
+
+
+# In[58]:
+
+np.maximum(x,y)
+
+
+# In[59]:
+
+arr = randn(7)*5
+
+
+# In[60]:
+
+np.modf(arr)
+
+
+# In[61]:
+
+points = np.arange(-5,5,0.01)
+
+
+# In[62]:
+
+xs, ys = np.meshgrid(points, points)
+
+
+# In[63]:
+
+import matplotlib.pyplot as plt
+
+
+# In[68]:
+
+z = np.sqrt(xs**2 + ys**2)
+
+
+# In[70]:
+
+plt.imshow(z, cmap = plt.cm.gray)
+plt.colorbar()
+plt.title("Image plot of $\sqrt{x^2 + y^2}$ for a grid of values")
+plt.show()
+
+
+# In[71]:
+
+xarr = np.array([1.1, 1.2, 1.3, 1.4, 1.5])
+
+
+# In[72]:
+
+yarr = np.array([2.1, 2.2, 2.3, 2.4, 2.5])
+
+
+# In[73]:
+
+cond = np.array([True, False, True, True, False])
+
+
+# In[74]:
+
+result = [(x if c else y) for x, y, c in zip(xarr, yarr, cond)]
+
+
+# In[75]:
+
+result
+
+
+# In[77]:
+
+result =  np.where(cond, xarr, yarr)
+
+
+# In[78]:
+
+result
+
+
+# In[79]:
+
+arr = randn(4, 4)
+
+
+# In[80]:
+
+arr
+
+
+# In[82]:
+
+np.where(arr > 0, 2, -2)
+
+
+# In[83]:
+
+np.where(arr >0, 2, arr)
+
+
+# In[84]:
+
+arr = randn(5, 4)
+
+
+# In[85]:
+
+arr
+
+
+# In[86]:
+
+arr.mean()
+
+
+# In[87]:
+
+np.mean(arr)
+
+
+# In[88]:
+
+arr.sum()
+
+
+# In[89]:
+
+arr.mean(axis = 1)
+
+
+# In[90]:
+
+np.mean(arr[0])
+
+
+# In[91]:
+
+arr.sum(0)
+
+
+# In[92]:
+
+np.sum(arr[:, 0])
+
+
+# In[94]:
+
+arr = randn(100)
+
+
+# In[95]:
+
+(arr>0).sum()
+
+
+# In[96]:
+
+bools = np.array([False, False, True, False])
+
+
+# In[97]:
+
+bools.any()
+
+
+# In[98]:
+
+bools.all()
+
+
+# In[99]:
+
+arr =  randn(8)
+
+
+# In[100]:
+
+arr
+
+
+# In[101]:
+
+arr.sort()
+
+
+# In[102]:
+
+arr
+
+
+# In[103]:
+
+arr = randn(5, 3)
+
+
+# In[104]:
+
+arr
+
+
+# In[105]:
+
+arr.sort(1)
+
+
+# In[106]:
+
+arr
+
+
+# In[107]:
+
+large_arr = randn(1000)
+
+
+# In[108]:
+
+large_arr.sort()
+
+
+# In[109]:
+
+large_arr[int(0.05 * len(large_arr))]
+
+
+# In[110]:
+
+len(large_arr)
+
+
+# In[111]:
+
+large_arr.shape
+
+
+# In[112]:
+
+names = np.array(['Bob', 'Joe', 'Will', 'Bob', 'Will', 'Joe', 'Joe'])
+
+
+# In[113]:
+
+np.unique(names)
+
+
+# In[114]:
+
+sorted(set(names))
+
+
+# In[115]:
+
+ints = np.array([3,3,3,2.2,1,1,4,4])
+
+
+# In[116]:
+
+np.unique(ints)
+
+
+# In[117]:
+
+len(np.unique(ints))
+
+
+# In[118]:
+
+np.unique(ints).shape
+
+
+# In[119]:
+
+values = np.array([6,0,0,3,2,5,6])
+
+
+# In[120]:
+
+np.in1d(values, [2,3,6])
+
+
+# In[121]:
+
+arr = np.arange(10)
+
+
+# In[122]:
+
+np.save('some_array', arr)
+
+
+# In[123]:
+
+np.load('some_array.npy')
+
+
+# In[124]:
+
+np.savez('array_achive.npz', a = arr, b = arr)
+
+
+# In[125]:
+
+arch = np.load('array_achive.npz')
+
+
+# In[126]:
+
+arch['b']
+
+
 # In[ ]:
 
 
